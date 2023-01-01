@@ -9,14 +9,19 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # Inherit some common lineage stuff.
-$(call inherit-product, vendor/arrow/config/common.mk)
+$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
 # Inherit from device makefile
 $(call inherit-product, device/xiaomi/munch/device.mk)
 
-DEVICE_MAINTAINER := madmax7896
+# Include GMS by default, but rely on environment variable just in case we don't want to build with GMS conditionally
+ifneq ($(NO_GMS),false)
+$(call inherit-product, vendor/gapps/arm64/arm64-vendor.mk)
+endif
 
-PRODUCT_NAME := arrow_munch
+TARGET_SUPPORTS_CALL_RECORDING := true
+
+PRODUCT_NAME := lineage_munch
 PRODUCT_DEVICE := munch
 PRODUCT_MANUFACTURER := Xiaomi
 PRODUCT_BRAND := POCO
