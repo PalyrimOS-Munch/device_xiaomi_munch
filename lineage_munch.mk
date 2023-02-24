@@ -18,6 +18,7 @@ $(call inherit-product, device/xiaomi/munch/device.mk)
 WITH_GMS := true
 PALYRIM_MAINTAINER := vinc3nt
 TARGET_FACE_UNLOCK_SUPPORTED := true
+TARGET_BOOT_ANIMATION_RES := 1080
 
 TARGET_SUPPORTS_CALL_RECORDING := true
 
