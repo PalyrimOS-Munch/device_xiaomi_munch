@@ -17,6 +17,7 @@ $(call inherit-product, device/xiaomi/munch/device.mk)
 # PalyrimOS flags
 WITH_GMS := true
 PALYRIM_MAINTAINER := vinc3nt
+TARGET_FACE_UNLOCK_SUPPORTED := true
 
 TARGET_SUPPORTS_CALL_RECORDING := true
 
